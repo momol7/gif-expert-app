@@ -4,7 +4,10 @@ import { AgregarCategoria } from "./components/AgregarCategoria";
 export function GifExpertApp(){
   const [ categorias, setCategorias ] = useState(["One Punch","Dragon ball"])
 
-  const onNuevaCategoria = categoria => setCategorias([categoria, ...categorias]);
+  const onNuevaCategoria = categoria => {
+    if (categorias.includes(categoria)) return;
+    setCategorias([categoria, ...categorias]);
+  }
   return(
     <>
       <h1>GifExpertApp</h1>
