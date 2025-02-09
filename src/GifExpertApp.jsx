@@ -4,10 +4,11 @@ import { AgregarCategoria } from "./components/AgregarCategoria";
 export function GifExpertApp(){
   const [ categorias, setCategorias ] = useState(["One Punch","Dragon ball"])
 
+  const onNuevaCategoria = categoria => setCategorias([categoria, ...categorias]);
   return(
     <>
       <h1>GifExpertApp</h1>
-      <AgregarCategoria setCategorias={setCategorias} />
+      <AgregarCategoria onNuevaCategoria={onNuevaCategoria} />
       <ol>
         { categorias.map( c => ( <li key={c}>{ c }</li> ) )}
       </ol>

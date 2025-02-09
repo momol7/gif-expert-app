@@ -1,12 +1,12 @@
 import { useState } from "react";
 
-export const AgregarCategoria = ({ setCategorias }) => {
+export const AgregarCategoria = ({ onNuevaCategoria }) => {
   const [input, setInput] = useState("");
   
   const handleSubmit = (e) => {
     e.preventDefault();
     if (input.trim().length <= 1 ) return;
-    setCategorias(c => [input, ...c]);
+    onNuevaCategoria(input.toLowerCase());
   }
 
 
